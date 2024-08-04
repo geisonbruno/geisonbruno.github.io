@@ -17,7 +17,6 @@ const PortfolioLayout = () => {
                   <Outlet />
               </div>
           </div>
-          <h1>footer</h1>
       </div>
 
     <FooterLinks />
