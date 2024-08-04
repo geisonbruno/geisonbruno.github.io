@@ -1,7 +1,27 @@
+import {  MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
-import { theme } from "./theme";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
+import "../src/index.css";
+import PortfolioLayout from "./layouts/PortfolioLayout";
+import HomePage from "./pages/HomePage";
 
-export default function App() {
-  return <MantineProvider theme={theme}>App</MantineProvider>;
-}
+
+
+
+const App = () => {
+    return (
+        <MantineProvider forceColorScheme={"dark"}>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<PortfolioLayout />}>
+                        <Route index element={<HomePage />} />
+                        <Route path="/home2" element={<HomePage />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </MantineProvider>
+    );
+};
+
+export default App;
